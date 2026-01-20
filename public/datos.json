@@ -1,0 +1,160 @@
+{
+  "siteConfig": {
+    "name": "OnubHike",
+    "logo": "images/logo.svg",
+    "contact": {
+      "location": "Huelva",
+      "email": "iessansebastian@onubhike.es",
+      "phone": "+34 666 123 456"
+    },
+    "socialLinks": [
+      { "platform": "facebook", "url": "#", "icon": "fab fa-facebook-f" },
+      { "platform": "twitter", "url": "#", "icon": "fab fa-twitter" },
+      { "platform": "instagram", "url": "#", "icon": "fab fa-instagram" },
+      { "platform": "youtube", "url": "#", "icon": "fab fa-youtube" }
+    ]
+  },
+  "navigation": [
+    { "name": "Inicio", "path": "/" },
+    { "name": "Rutas", "path": "/rutas" },
+    { "name": "Equipo", "path": "/equipo" },
+    { "name": "Comunidad", "path": "/comunidad" }
+  ],
+  "pages": {
+    "home": {
+      "hero": {
+        "title": "Descubre las mejores rutas de Huelva",
+        "subtitle": "Explora la naturaleza onubense a través de sus senderos",
+        "video": "videos/intro_Ed.mp4"
+      },
+      "carousel": [
+        {
+          "image": "images/equipo6.webp",
+          "title": "Explora la naturaleza",
+          "description": "Descubre paisajes increíbles en la provincia de Huelva"
+        },
+        {
+          "image": "images/carrusel1.webp",
+          "title": "Rutas para todos los niveles",
+          "description": "Encuentra senderos adaptados a tu experiencia"
+        },
+        {
+          "image": "images/carrusel4.webp",
+          "title": "Comunidad activa",
+          "description": "Únete a otros amantes del senderismo"
+        }
+      ]
+    },
+    "rutas": {
+      "hero": { "video": "videos/rutas.mp4" },
+      "items": [
+        {
+          "id": 1,
+          "titulo": "Paraje Natural Marismas del Río Piedras",
+          "descripcion": "Ruta circular de 12 km con dificultad moderada. Ideal para observar aves en un paisaje de marismas único.",
+          "imagen": "images/ruta1.webp",
+          "url": "https://www.komoot.com/es-es/smarttour/e983683628/paraje-natural-marismas-del-rio-piedras-circular-desde-el-rompido"
+        },
+        {
+          "id": 2,
+          "titulo": "Parque Natural de Doñana",
+          "descripcion": "Recorrido fácil de 8 km por sendero accesible. Perfecto para todos los niveles, incluyendo niños y personas mayores.",
+          "imagen": "images/ruta2.webp",
+          "url": "https://www.komoot.com/es-es/smarttour/e983597795/parque-natural-de-donana-circular-por-el-sendero-charco-de-la-boca"
+        },
+        {
+          "id": 3,
+          "titulo": "Hornos de Cal",
+          "descripcion": "Ruta moderada de 10 km que combina historia natural con patrimonio industrial. Apta para familias activas.",
+          "imagen": "images/ruta3.webp",
+          "url": "https://www.komoot.com/es-es/smarttour/e983585106/hornos-de-cal-ruta-circular-desde-santa-ana-la-real-sl-a-201"
+        },
+        {
+          "id": 4,
+          "titulo": "Senda del Tren Minero y minas del Río Tinto",
+          "descripcion": "Itinerario de 14 km con dificultad moderada-alta. Descubre el fascinante paisaje marciano de las minas.",
+          "imagen": "images/ruta4.webp",
+          "url": "https://www.komoot.com/es-es/smarttour/e1010556547/senda-del-tren-minero-y-minas-del-rio-tinto-circular-desde-nerva"
+        },
+        {
+          "id": 5,
+          "titulo": "Castaño del Robledo y Picos de Aroche",
+          "descripcion": "Ruta exigente de 18 km con desnivel considerable. Solo para senderistas experimentados.",
+          "imagen": "images/ruta5.webp",
+          "url": "https://www.komoot.com/es-es/smarttour/e984185938/santa-ana-la-real-castano-del-robledo-alajar..."
+        },
+        {
+          "id": 6,
+          "titulo": "Ribera del Jabugo",
+          "descripcion": "Paseo fácil de 6 km junto al río Múrtiga, ideal para familias con niños de todas las edades.",
+          "imagen": "images/ruta6.webp",
+          "url": "https://es.wikiloc.com/rutas-senderismo/ribera-de-jabugo-circular-4644145"
+        },
+        {
+          "id": 7,
+          "titulo": "Sendero Charco Malo",
+          "descripcion": "Ruta moderada de 5 km que conduce a cascadas espectaculares en un entorno de cuento.",
+          "imagen": "images/ruta7.webp",
+          "url": "https://es.wikiloc.com/rutas-senderismo/cortelazor-sendero-charco-malo-59087513"
+        },
+        {
+          "id": 8,
+          "titulo": "Sendero de Alájar",
+          "descripcion": "Camino fácil de 1.7 km perfecto para iniciarse en el senderismo. Duración aproximada de 40 minutos.",
+          "imagen": "images/ruta8.webp",
+          "url": "https://es.wikiloc.com/rutas-senderismo/01-07-2017-sendero-alajar-santa-ana-la-real..."
+        },
+        {
+          "id": 9,
+          "titulo": "Ruta del Bosque Encantado",
+          "descripcion": "Recorrido moderado de 8 km entre alcornoques, encinas y castaños centenarios.",
+          "imagen": "images/ruta9.webp",
+          "url": "https://es.wikiloc.com/rutas-senderismo/fuenteheridos-bosque-encantado-castanar-de-la-urraleda..."
+        },
+        {
+          "id": 10,
+          "titulo": "Sendero el Talenque-Valdelarco",
+          "descripcion": "Ruta fácil de 3 km con duración aproximada de 1.5 horas. Senda histórica perfecta para toda la familia.",
+          "imagen": "images/ruta10.webp",
+          "url": "https://es.wikiloc.com/rutas-senderismo/sl-a-128-sendero-el-talenque-valdelarco-sierra-de-aracena-15980886"
+        }
+      ],
+      "ranking": [
+        { "pos": 1, "nombre": "Ribera del Jabugo", "km": "4,8 km", "dificultad": "Media", "puntuacion": 9.8 },
+        { "pos": 2, "nombre": "Sendero del Charco Malo", "km": "1,7 km", "dificultad": "Media", "puntuacion": 9.0 },
+        { "pos": 3, "nombre": "Sendero Álajar - Los Madtroñeros", "km": "1,7 km", "dificultad": "Baja", "puntuacion": 8.7 },
+        { "pos": 4, "nombre": "Sendero el Talenque-Valdelarco", "km": "3,0 km", "dificultad": "Media", "puntuacion": 8.5 },
+        { "pos": 5, "nombre": "Sendero de la Peña de Arias Montano", "km": "2,5 km", "dificultad": "Alta", "puntuacion": 8.3 }
+      ]
+    },
+    "equipo": {
+      "hero": { "video": "videos/montania_Ed.mp4" },
+      "items": [
+        { "nombre": "Calzado", "desc": "Botas de senderismo con buen agarre e impermeabilidad.", "imagen": "images/equipo1.webp", "tooltip": "Fundamental para evitar lesiones" },
+        { "nombre": "Cantimplora", "desc": "Al menos un litro y resistente. La hidratación es clave.", "imagen": "images/equipo2.webp" },
+        { "nombre": "Botiquín", "desc": "Incluye tiritas, antiséptico y vendas para emergencias.", "imagen": "images/equipo3.webp" },
+        { "nombre": "Gorra", "desc": "Protege contra la insolación y la exposición solar.", "imagen": "images/equipo4.webp" },
+        { "nombre": "Mochila", "desc": "Mochila cómoda y ergonómica. Distribuye bien el peso.", "imagen": "images/equipo5.webp" },
+        { "nombre": "Ropa Técnica", "desc": "Usa ropa transpirable y evita el algodón.", "imagen": "images/equipo6.webp" }
+      ]
+    },
+    "comunidad": {
+      "hero": { "video": "videos/cascada.mp4" },
+      "eventos": [
+        {
+          "fecha": "13 Enero 2026",
+          "titulo": "Salida a Río Tinto",
+          "descripcion": "Ruta circular de 5km, apto para todas las edades. Llevad mucho abrigo.",
+          "confirmados": 18
+        },
+        {
+          "fecha": "20 Diciembre 2025",
+          "titulo": "Ruta de Hornos de Cal",
+          "descripcion": "Desayuno conjunto e inicio de marcha. Apto para todas las edades.",
+          "confirmados": 50
+        }
+      ],
+      "videotutorial": "videos/video_senderos_Huelva.mp4"
+    }
+  }
+}

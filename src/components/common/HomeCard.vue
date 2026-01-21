@@ -1,45 +1,53 @@
 <script setup>
 import Button from "primevue/button";
+import { ArrowUpRight } from 'lucide-vue-next';
 
 defineProps({
   title: String,
   description: String,
   image: String,
   link: String,
-  buttonText: { type: String, default: "Ver más" },
+  buttonText: { type: String, default: "Explorar ahora" },
+  icon: Object // Pasaremos el componente del icono como prop
 });
 </script>
 
 <template>
-  <div
-    class="bg-white rounded-xl shadow-md  overflow-hidden flex flex-col h-Full border border-gray-100 hover:shadow-lg transition-shadow duration-300"
-  >
-    <div class="aspect-video w-full overflow-hidden">
-      <img
-        :src="image"
-        :alt="title"
-        class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
-      />
-    </div>
+  <router-link :to="link" class="group no-underline block h-full">
+    <div class="relative bg-white rounded-3xl shadow-sm border border-emerald-50 overflow-hidden flex flex-col h-full transition-all duration-500 hover:shadow-2xl hover:-translate-y-2">
+      
+      <div class="relative aspect-video w-full overflow-hidden">
+        <img
+          :src="image"
+          :alt="title"
+          class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+        />
+        <div class="absolute inset-0 bg-linear-to-t from-emerald-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        
 
-    <div class="p-6 flex flex-col grow text-center">
-      <h3 class="text-xl font-bold text-gray-900 mb-2">{{ title }}</h3>
-      <p class="text-gray-600 mb-6 grow">
-        {{ description }}
-      </p>
+      </div>
 
-      <router-link :to="link" class="no-underline">
-        <Button
-          class="w-full px-15 bg-emerald-500 hover:bg-emerald-400 rounded-lg font-bold h-12 text-white transition-all duration-200 hover:scale-105 active:scale-95"
-          raised
-        >
-          <span
-            class="hover:border-b-2 text-xl border-white transition-all duration-100"
-          >
+      <div class="p-8 pt-10 flex flex-col grow">
+        <h3 class="text-2xl font-black text-gray-900 mb-3 group-hover:text-emerald-600 transition-colors">
+          {{ title }}
+        </h3>
+        <p class="text-gray-600 text-base leading-relaxed mb-8 grow">
+          {{ description }}
+        </p>
+
+        <div class="flex items-center justify-between mt-auto">
+          <span class="text-emerald-600 font-black text-sm uppercase tracking-widest group-hover:translate-x-2 transition-transform duration-300 flex items-center gap-2">
             {{ buttonText }}
+            <ArrowUpRight :size="18" />
           </span>
-        </Button>
-      </router-link>
+          
+          <div class="w-10 h-10 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-300">
+             <ArrowUpRight :size="20" />
+          </div>
+        </div>
+      </div>
+
+      <div class="h-1.5 w-0  group-hover:w-full transition-all duration-700"></div>
     </div>
-  </div>
+  </router-link>
 </template>

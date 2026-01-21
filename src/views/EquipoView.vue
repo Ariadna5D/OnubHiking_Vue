@@ -66,10 +66,6 @@ const equipoItems = [
     />
 
     <section class="mt-16 mb-20">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-black text-gray-900 uppercase tracking-tighter">Checklist de Aventura</h2>
-        <p class="text-emerald-600 font-bold">Lo que no puede faltar en tu mochila</p>
-      </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         <EquipmentCard

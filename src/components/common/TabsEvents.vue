@@ -1,60 +1,121 @@
 <script setup>
-import { ref } from 'vue';
-import EventCard from './EventCard.vue';
+import { ref, onMounted } from "vue";
+import EventCard from "./EventCard.vue";
+import { Flame, Hammer, Clock } from "lucide-vue-next";
 
-const activeTab = ref('activos');
+// Asegúrate de importar los componentes si no los registraste globalmente
+import Tabs from "primevue/tabs";
+import TabList from "primevue/tablist";
+import Tab from "primevue/tab";
+import TabPanels from "primevue/tabpanels";
+import TabPanel from "primevue/tabpanel";
+
+const isLoading = ref(true);
+
 const activeEvents = ref([
-  { date: '13 Enero 2026', title: 'Salida a Río Tinto', description: 'Haremos una ruta circular de 5km, apto para todas las edades, apúntate! Llevad mucho abrigo.', participants: '18 personas confirmadas' },
-  { date: '20 Diciembre 2025', title: 'Ruta de Hornos de Cal', description: 'Nos veremos pronto para desayunar juntos e iniciaremos la marcha... juntos! es apto para todas las edades, no olvideis llevar agua!', participants: '50 personas confirmadas' }
+  {
+    date: "13 Enero 2026",
+    title: "Salida a Río Tinto",
+    description:
+      "Haremos una ruta circular de 5km, apto para todas las edades...",
+    participants: "18 personas confirmadas",
+  },
+  {
+    date: "20 Diciembre 2025",
+    title: "Ruta de Hornos de Cal",
+    description: "Nos veremos pronto para desayunar juntos...",
+    participants: "50 personas confirmadas",
+  },
 ]);
-const pastEvents = ref([]); // En construcción
-const futureEvents = ref([]); // En construcción
 
-const tabs = [
-  { id: 'activos', label: 'Eventos Activos', icon: 'fire' },
-  { id: 'anteriores', label: 'Eventos Anteriores', disabled: true },
-  { id: 'futuros', label: 'Eventos Futuros', disabled: true }
-];
+const tabs = ref([
+  { id: "activos", label: "Eventos Activos", icon: Flame, disabled: false },
+  {
+    id: "anteriores",
+    label: "Eventos Anteriores",
+    icon: Hammer,
+    disabled: true,
+  },
+  { id: "futuros", label: "Eventos Futuros", icon: Clock, disabled: true },
+]);
+
+onMounted(() => {
+  setTimeout(() => (isLoading.value = false), 1500);
+});
 </script>
 
 <template>
-  <div class="w-full bg-white dark:bg-gray-800 rounded-xl shadow-md border border-gray-100 dark:border-gray-700 overflow-hidden">
-    <!-- Tabs Header -->
-    <div class="border-b border-gray-200 dark:border-gray-700">
-      <nav class="flex space-x-1 px-4 -mb-px">
-        <button
-          v-for="tab in tabs"
-          :key="tab.id"
-          :class="[
-            'px-4 py-3 rounded-t-lg text-sm font-semibold transition-all duration-200 flex items-center',
-            activeTab === tab.id
-              ? 'bg-primary text-white shadow-md'
-              : 'text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-700'
-          ]"
-          :disabled="tab.disabled"
-          @click="!tab.disabled && (activeTab = tab.id)"
-        >
-          <i :class="`fas fa-${tab.icon} mr-2`"></i>
-          {{ tab.label }}
-        </button>
-      </nav>
-    </div>
+  <div
+    class="w-full bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden"
+  >
+    <Tabs value="activos">
+      <div class="border-b border-gray-200 bg-gray-50/30 overflow-x-auto">
+        <TabList class="flex flex-row! items-center min-w-full">
+          <Tab
+            v-for="tab in tabs"
+            :key="tab.id"
+            :value="tab.id"
+            :disabled="tab.disabled"
+            class="flex-1 flex items-center justify-center gap-2 px-4 py-5 font-bold transition-all duration-300 border-b-2 cursor-pointer whitespace-nowrap data-active:border-emerald-500 data-active:text-emerald-600 data-active:bg-white text-gray-400 border-transparent hover:text-gray-600 disabled:opacity-30"
+          >
+            <component :is="tab.icon" :size="20" />
+            <span class="text-xs sm:text-sm md:text-base">{{ tab.label }}</span>
+          </Tab>
+        </TabList>
+      </div>
 
-    <!-- Tab Content -->
-    <div class="p-6">
-      <div v-if="activeTab === 'activos'" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <EventCard v-for="event in activeEvents" :key="event.title" v-bind="event" />
-      </div>
-      <div v-else-if="activeTab === 'anteriores'" class="text-center py-12 text-gray-500 dark:text-gray-400">
-        <i class="fas fa-hammer text-4xl mb-4 block"></i>
-        <p class="text-lg font-semibold mb-2">En construcción</p>
-        <p class="text-sm">Pronto podrás ver eventos anteriores.</p>
-      </div>
-      <div v-else class="text-center py-12 text-gray-500 dark:text-gray-400">
-        <i class="fas fa-clock text-4xl mb-4 block"></i>
-        <p class="text-lg font-semibold mb-2">En construcción</p>
-        <p class="text-sm">Próximamente eventos futuros.</p>
-      </div>
-    </div>
+      <TabPanels class="p-6">
+        <TabPanel value="activos">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <template v-if="isLoading">
+              <div
+                v-for="i in 2"
+                :key="i"
+                class="border border-gray-100 rounded-xl p-5 animate-pulse bg-gray-50/50"
+              >
+                <div class="h-4 bg-gray-200 rounded w-1/4 mb-4"></div>
+                <div class="h-7 bg-gray-300 rounded w-3/4 mb-4"></div>
+                <div class="space-y-2 text">
+                  <div class="h-3 bg-gray-200 rounded w-full"></div>
+                  <div class="h-3 bg-gray-200 rounded w-5/6"></div>
+                </div>
+              </div>
+            </template>
+            <template v-else>
+              <EventCard
+                v-for="event in activeEvents"
+                :key="event.title"
+                v-bind="event"
+              />
+            </template>
+          </div>
+        </TabPanel>
+
+        <TabPanel value="anteriores">
+          <div class="text-center py-16 text-gray-400 font-medium">
+            No hay eventos para mostrar.
+          </div>
+        </TabPanel>
+      </TabPanels>
+    </Tabs>
   </div>
 </template>
+
+<style scoped>
+:deep([role="tablist"]) {
+  display: flex !important;
+  flex-direction: row !important;
+  width: 100% !important;
+}
+
+:deep([role="tabpanel"]:not([data-p-active="true"])) {
+  display: none !important;
+}
+
+.overflow-x-auto {
+  scrollbar-width: none;
+}
+.overflow-x-auto::-webkit-scrollbar {
+  display: none;
+}
+</style>

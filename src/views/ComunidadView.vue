@@ -26,7 +26,7 @@ const communityData = {
 
     <!-- Tabs de eventos -->
     <section class="mb-12">
-      <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 text-center">
+      <h2 class="text-2xl font-bold text-emerald-900  mb-6 text-center">
         Noticias de la Comunidad
       </h2>
       <TabsEvents />

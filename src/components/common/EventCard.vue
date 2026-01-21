@@ -1,38 +1,50 @@
 <script setup>
+import { Users, ChevronRight } from 'lucide-vue-next';
+
 defineProps({
   date: String,
   title: String,
   description: String,
-  participants: String,
-  linkText: {
-    type: String,
-    default: 'Unirme'
-  }
+  participants: String
 });
 </script>
 
 <template>
-  <div class="bg-white dark:bg-gray-800 rounded-xl shadow-md border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-all duration-300 h-full overflow-hidden">
-    <div class="p-6">
-      <!-- Icono animado y badge -->
-      <div class="flex items-center mb-4">
-        <div class="w-6 h-6 bg-orange-400 rounded-full relative mr-3 animate-ping">
-          <div class="w-4 h-4 bg-orange-500 rounded-full absolute inset-0 m-auto"></div>
-        </div>
-        <span class="bg-amber-400 text-black px-2 py-1 rounded-full text-xs font-bold uppercase tracking-wide ">EVENTO</span>
+  <div class="bg-white p-6 rounded-2xl border border-emerald-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 relative overflow-hidden group">
+    
+<div class="absolute top-6 right-6 flex items-center gap-2 bg-amber-100/50 px-3 py-1.5 rounded-full border border-amber-200">
+      <span class="relative flex h-3 w-3">
+        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-500 opacity-75"></span>
+        <span class="relative inline-flex rounded-full h-3 w-3 bg-amber-600"></span>
+      </span>
+      <span class="text-xs font-black text-amber-800 uppercase tracking-tighter">Nuevo</span>
+    </div>
+
+    <div class="flex items-center gap-2 mb-4">
+      <span class="bg-emerald-600 text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-widest">
+        Próximamente
+      </span>
+      <span class="text-emerald-700 text-xs font-bold uppercase tracking-wider">{{ date }}</span>
+    </div>
+    
+    <h3 class="text-xl font-extrabold text-gray-900 mb-3 group-hover:text-emerald-600 transition-colors">
+      {{ title }}
+    </h3>
+    
+    <p class="text-gray-600 text-sm leading-relaxed mb-6">
+      {{ description }}
+    </p>
+    
+    <div class="flex items-center justify-between mt-auto pt-4 border-t border-gray-50">
+      <div class="flex items-center text-emerald-700 font-bold text-xs">
+        <Users :size="16" class="mr-1.5 opacity-70" />
+        {{ participants }}
       </div>
-      <small class="text-gray-500 dark:text-gray-400 block mb-3">{{ date }}</small>
-      <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-3 line-clamp-2">{{ title }}</h4>
-      <p class="text-gray-600 dark:text-gray-400 text-sm mb-6 line-clamp-3">{{ description }}</p>
-      <div class="flex justify-between items-center">
-        <span class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">{{ participants }}</span>
-        <a
-          href="#"
-          class="px-4 py-2 border border-primary text-primary bg-white hover:bg-primary hover:text-white rounded-lg text-sm font-semibold transition-colors duration-200"
-        >
-          {{ linkText }}
-        </a>
-      </div>
+
+      <button class="flex items-center gap-1 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold py-2 px-4 rounded-lg transition-colors shadow-md shadow-emerald-200">
+        Unirme
+        <ChevronRight :size="14" />
+      </button>
     </div>
   </div>
 </template>

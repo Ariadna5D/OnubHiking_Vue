@@ -2,31 +2,42 @@
 defineProps({
   title: String,
   description: String,
-  image: String
+  image: String,
+  category: {
+    type: String,
+    default: 'Esencial'
+  }
 });
 </script>
 
 <template>
-  <div class="h-full bg-white dark:bg-gray-800 rounded-xl shadow-sm overflow-hidden border border-gray-100 dark:border-gray-700 hover:shadow-lg transition-all duration-300">
-    <!-- Imagen -->
-    <div class="w-full overflow-hidden">
-      <img :src="image" :alt="title" class="w-full h-48 sm:h-56 md:h-64 object-cover hover:scale-105 transition-transform duration-500" />
-    </div>
-
-    <div class="p-4 sm:p-6 flex items-center gap-4">
-      <div class="w-12 h-12 sm:w-14 sm:h-14 shrink-0 flex items-center justify-center rounded-lg  p-2">
-        <slot></slot>
+  <div class="group h-full bg-white rounded-2xl shadow-sm border border-emerald-50 overflow-hidden transition-all duration-500 hover:-translate-y-3 hover:shadow-2xl flex flex-col">
+    
+    <div class="relative w-full h-full overflow-hidden">
+      <img 
+        :src="image" 
+        :alt="title" 
+        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+      />
+      <div class="absolute top-4 left-4 bg-emerald-600/90 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-[0.2em] px-3 py-1 rounded-full shadow-lg">
+        {{ category }}
       </div>
       
-      <h5 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white grow text-left leading-tight">
-        {{ title }}
-      </h5>
+
     </div>
 
-    <div class="px-4 sm:px-6 pb-6">
-      <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+    <div class="p-8 pt-10 grow">
+      <h3 class="text-xl font-black text-gray-900 mb-3 group-hover:text-emerald-600 transition-colors">
+        {{ title }}
+      </h3>
+      
+      <p class="text-gray-600 text-sm leading-relaxed font-medium">
         {{ description }}
       </p>
+    </div>
+
+    <div class="px-8 pb-6">
+      <div class="h-1 w-12 bg-emerald-100 rounded-full group-hover:w-full transition-all duration-500"></div>
     </div>
   </div>
 </template>

@@ -3,7 +3,7 @@ import { ref, watch } from 'vue'
 
 const searchQuery = ref('')
 const isFocused = ref(false)
-
+import { Search } from 'lucide-vue-next';
 const handleSearch = () => {
 }
 </script>
@@ -26,9 +26,9 @@ const handleSearch = () => {
             />
             <button 
                 @click="handleSearch"
-                class="absolute right-3 top-1/2 -translate-y-1/2 bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2 rounded-xl font-semibold text-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 active:scale-95"
+                class="absolute right-3 h-auto top-1/2 -translate-y-1/2 bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-4 rounded-xl font-semibold text-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 active:scale-95"
             >
-                Buscar
+                <Search :size="32"/>
             </button>
         </div>
         <p v-if="searchQuery" class="text-xs text-gray-500 mt-2 text-center">

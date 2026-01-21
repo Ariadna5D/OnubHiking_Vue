@@ -39,7 +39,7 @@ const menuCards = [
             subtitle="Explora la naturaleza onubense a través de sus senderos"
         />
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        <div class="grid px-15 grid-cols-1 md:grid-cols-2 gap-20 mb-12">
             <HomeCard 
                 v-for="card in menuCards" 
                 :key="card.title"

@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@primevue/themes": "^4.5.4",
-    "@tailwindcss/vite": "^4.1.18",
+    "primeicons": "^7.0.0",
     "primevue": "^4.5.4",
     "tailwind-merge": "^3.4.0",
     "tailwindcss-primeui": "^0.6.1",
@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.18",
+    "@tailwindcss/vite": "^4.1.18",
     "@vitejs/plugin-vue": "^6.0.1",
     "autoprefixer": "^10.4.23",
     "postcss": "^8.5.6",

@@ -9,6 +9,7 @@ import {
   Backpack, 
   Shirt 
 } from 'lucide-vue-next';
+import ScrollReveal from '../components/animations/ScrollReveal.vue';
 
 // 1. Definimos la base URL
 const baseUrl = import.meta.env.BASE_URL;
@@ -68,15 +69,18 @@ const equipoItems = [
       subtitle="Equípate como un profesional para disfrutar de Huelva" 
     />
 
-    <section class="mt-16 mb-20">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        <EquipmentCard
-          v-for="item in equipoItems"
-          :key="item.title"
-          v-bind="item"
-        >
-        </EquipmentCard>
-      </div>
-    </section>
+<section class="mt-8 px-15 mb-20">
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    
+    <ScrollReveal 
+      v-for="(item, index) in equipoItems" 
+      :key="item.title"
+      :delay="index * 150"
+    >
+      <EquipmentCard v-bind="item" />
+    </ScrollReveal>
+
+  </div>
+</section>
   </div>
 </template>

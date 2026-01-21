@@ -2,6 +2,7 @@
 import HeroVideo from '../components/common/HeroVideo.vue';
 import CommunityCard from '../components/common/CommunityCard.vue';
 import TabsEvents from '../components/common/TabsEvents.vue';
+import ScrollReveal from '../components/animations/ScrollReveal.vue';
 
 // 1. Obtenemos la base URL de Vite
 const baseUrl = import.meta.env.BASE_URL;
@@ -23,15 +24,19 @@ const communityData = {
       subtitle="Explora Huelva con la mejor compañía y para todas las edades"
     />
 
-    <section class="mb-12">
-      <CommunityCard v-bind="communityData" />
+    <section class="mb-12 px-15">
+      <ScrollReveal>
+        <CommunityCard v-bind="communityData" />
+      </ScrollReveal>
     </section>
 
-    <section class="mb-12">
+    <section class="mb-12 px-15">
       <h2 class="text-2xl font-bold text-emerald-900  mb-6 text-center">
         Noticias de la Comunidad
       </h2>
-      <TabsEvents />
+      <ScrollReveal>
+        <TabsEvents />
+      </ScrollReveal>
     </section>
   </div>
 </template>

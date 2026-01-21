@@ -1,4 +1,6 @@
 <script setup>
+import ScrollReveal from '../components/animations/ScrollReveal.vue';
+import WindCanvas from '../components/animations/WindCanvas.vue';
 import HeroVideo from '../components/common/HeroVideo.vue';
 import HomeCard from '../components/common/HomeCard.vue';
 import { Map, Lightbulb, Backpack, Users } from 'lucide-vue-next';
@@ -45,22 +47,19 @@ const menuCards = [
 
 <template>
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 mt-6 grow min-h-screen">
-        
-        <HeroVideo 
-            :videoSrc="`${baseUrl}videos/intro_Ed.mp4`"
-            title="Tu aventura comienza aquí"
-            subtitle="Explora Huelva de una forma diferente a través del senderismo"
-        />
 
-        <section class="max-w-6xl mx-auto mt-16 mb-24">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16">
-              <HomeCard 
-                  v-for="card in menuCards" 
-                  :key="card.title"
-                  v-bind="card" 
-                  class="animate-in fade-in slide-in-from-bottom-6 duration-700"
-              />
-          </div>
+        <HeroVideo :videoSrc="`${baseUrl}videos/intro_Ed.mp4`" title="Tu aventura comienza aquí"
+            subtitle="Explora Huelva de una forma diferente a través del senderismo" />
+        <section class="max-w-6xl mx-auto mt-8 mb-24">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-7">
+            <ScrollReveal 
+            v-for="(card, index) in menuCards" 
+            :key="card.id || index"
+            :delay="index * 150"
+            >
+            <HomeCard v-bind="card" />
+            </ScrollReveal>
+            </div>
         </section>
     </div>
 </template>

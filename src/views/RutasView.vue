@@ -1,4 +1,5 @@
 <script setup>
+import ScrollReveal from "../components/animations/ScrollReveal.vue";
 import HeroVideo from "../components/common/HeroVideo.vue";
 import RouteCard from "../components/common/RouteCard.vue";
 import SearchBar from "../components/common/SearchBar.vue";
@@ -121,7 +122,6 @@ const rutas = [
 ];
 
 const topRutas = [
-  // (Este array no contiene imágenes, así que no necesita cambios)
   { rank: 1, name: "Ribera del Jabugo", km: "4,8 km", difficulty: "Media", score: "9,8 ★" },
   { rank: 2, name: "Sendero del Charco Malo", km: "1,7 km", difficulty: "Media", score: "9,0 ★" },
   { rank: 3, name: "Sendero Álajar - Los Madtroñeros", km: "1,7 km", difficulty: "Baja", score: "8,7 ★" },
@@ -132,17 +132,18 @@ const topRutas = [
 
 <template>
   <div class="container mx-auto px-4 mt-6 grow">
-    <HeroVideo
-      :videoSrc="`${baseUrl}videos/consejos_Ed.mp4`"
-      title="Rutas"
-      subtitle="Los senderos más conocidos de Huelva"
-    />
+    <HeroVideo :videoSrc="`${baseUrl}videos/consejos_Ed.mp4`" title="Rutas"
+      subtitle="Los senderos más conocidos de Huelva" />
 
     <section class="mt-8 px-15">
-      <SearchBar />
+      <ScrollReveal>
+        <SearchBar />
+      </ScrollReveal>
 
       <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-6 mb-12">
-        <RouteCard v-for="ruta in rutas" :key="ruta.title" v-bind="ruta" />
+        <ScrollReveal v-for="(ruta, index) in rutas" :key="ruta.title" :delay="index * 100">
+          <RouteCard v-bind="ruta" />
+        </ScrollReveal>
       </div>
     </section>
 
@@ -162,11 +163,7 @@ const topRutas = [
             </tr>
           </thead>
           <tbody>
-            <tr
-              v-for="ruta in topRutas"
-              :key="ruta.rank"
-              class="border-t hover:bg-teal-50 border-gray-100"
-            >
+            <tr v-for="ruta in topRutas" :key="ruta.rank" class="border-t hover:bg-teal-50 border-gray-100">
               <td class="px-4 py-3 text-gray-700">{{ ruta.rank }}</td>
               <td class="px-4 py-3 text-gray-900 font-medium">{{ ruta.name }}</td>
               <td class="px-4 py-3 text-gray-700">{{ ruta.km }}</td>

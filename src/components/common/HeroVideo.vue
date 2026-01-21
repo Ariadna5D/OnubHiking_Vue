@@ -32,8 +32,8 @@ defineProps({
             Tu navegador no soporta videos.
         </video>
         
-        <div class="absolute inset-0 bg-black/30 flex items-center justify-center text-center text-white px-4">
-            <div class="max-w-3xl">
+        <div class="absolute inset-0 bg-black/40 flex items-center justify-center text-center text-white px-4">
+            <div class="max-w-4xl">
                 <h1 v-if="title" class="text-3xl md:text-5xl font-bold mb-2 drop-shadow-md">
                     {{ title }}
                 </h1>

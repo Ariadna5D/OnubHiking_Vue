@@ -37,13 +37,10 @@ const equipoItems = [
 </script>
 
 <template>
-  <div class="container mx-auto px-4 sm:px-6 lg:px-8 mt-6 flex-grow min-h-screen">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8 mt-6 grow min-h-screen">
     <HeroVideo videoSrc="/videos/montania_Ed.mp4" title="Equipo de Senderismo" subtitle="El equipamiento esencial para tus aventuras" />
 
     <section class="mt-8 mb-12">
-      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">
-        Equipamiento esencial
-      </h2>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <EquipmentCard

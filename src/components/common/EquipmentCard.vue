@@ -14,11 +14,11 @@ defineProps({
     </div>
 
     <div class="p-4 sm:p-6 flex items-center gap-4">
-      <div class="w-12 h-12 sm:w-14 sm:h-14 flex-shrink-0 flex items-center justify-center rounded-lg  p-2">
+      <div class="w-12 h-12 sm:w-14 sm:h-14 shrink-0 flex items-center justify-center rounded-lg  p-2">
         <slot></slot>
       </div>
       
-      <h5 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white flex-grow text-left leading-tight">
+      <h5 class="text-lg sm:text-xl font-bold text-gray-900 dark:text-white grow text-left leading-tight">
         {{ title }}
       </h5>
     </div>

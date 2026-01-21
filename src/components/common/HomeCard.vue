@@ -16,9 +16,9 @@ defineProps({
             <img :src="image" :alt="title" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500" />
         </div>
 
-        <div class="p-6 flex flex-col flex-grow text-center">
+        <div class="p-6 flex flex-col grow text-center">
             <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">{{ title }}</h3>
-            <p class="text-gray-600 dark:text-gray-400 mb-6 flex-grow">
+            <p class="text-gray-600 dark:text-gray-400 mb-6 grow">
                 {{ description }}
             </p>
             

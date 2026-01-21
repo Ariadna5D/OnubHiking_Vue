@@ -2,20 +2,10 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import PrimeVue from 'primevue/config'
-import Aura from '@primevue/themes/aura'
-import './style.css'  // ← Importa PRIMERO
+import './style.css'  // Importa aquí
 
 const app = createApp(App)
+
 app.use(router)
-app.use(PrimeVue, {
-  theme: {
-    preset: Aura,
-    options: {
-      cssLayer: {
-        name: 'primevue',
-        order: 'tailwind-base, primevue, tailwind-utilities'  // Fuerza order
-      }
-    }
-  }
-})
+app.use(PrimeVue, { unstyled: true })  // ← Solo esto
 app.mount('#app')

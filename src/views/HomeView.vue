@@ -31,7 +31,7 @@ const menuCards = [
 </script>
 
 <template>
-    <div class="container mx-auto px-4 mt-6 flex-grow">
+    <div class="container mx-auto px-4 mt-6 grow">
         
         <HeroVideo 
             videoSrc="/videos/intro_Ed.mp4"

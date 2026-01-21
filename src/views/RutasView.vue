@@ -1,6 +1,7 @@
 <script setup>
 import HeroVideo from '../components/common/HeroVideo.vue';
 import RouteCard from '../components/common/RouteCard.vue';
+import SearchBar from '../components/common/SearchBar.vue';
 
 const rutas = [
   {
@@ -102,20 +103,19 @@ const topRutas = [
   { rank: 4, name: 'Sendero el Talenque-Valdelarco', km: '3,0 km', difficulty: 'Media', score: '8,5 ★' },
   { rank: 5, name: 'Sendero de la Peña de Arias Montano', km: '2,5 km', difficulty: 'Alta', score: '8,3 ★' }
 ];
+
 </script>
 
 <template>
-  <div class="container mx-auto px-4 mt-6 flex-grow">
+  <div class="container mx-auto px-4 mt-6 grow">
     <HeroVideo
-      videoSrc="/videos/rutas.mp4"
+      videoSrc="/videos/consejos_Ed.mp4"
       title="Rutas"
       subtitle="Los senderos más conocidos de Huelva"
     />
 
     <section class="mt-8">
-      <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-        Rutas destacadas
-      </h2>
+          <SearchBar />
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 mb-12">
         <RouteCard
@@ -125,7 +125,6 @@ const topRutas = [
         />
       </div>
     </section>
-
     <section class="mb-12">
       <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
         Top rutas más visitadas

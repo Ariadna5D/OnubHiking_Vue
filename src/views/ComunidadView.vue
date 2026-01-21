@@ -8,10 +8,11 @@ const communityData = {
   title: '¡Únete a nuestras rutas en grupo!',
   description: 'Quedamos a menudo y siempre hay muy buen ambiente, descubriremos lugares, experiencias y amigos nuevos! Esto es apto para todas las edades!'
 };
+
 </script>
 
 <template>
-  <div class="container mx-auto px-4 mt-6 flex-grow">
+  <div class="container mx-auto px-4 mt-6 grow">
     <HeroVideo
       videoSrc="/videos/cascada.mp4"
       title="Descubre nuestra gran comunidad"

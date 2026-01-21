@@ -19,7 +19,7 @@ defineProps({
         <div class="w-6 h-6 bg-orange-400 rounded-full relative mr-3 animate-ping">
           <div class="w-4 h-4 bg-orange-500 rounded-full absolute inset-0 m-auto"></div>
         </div>
-        <span class="bg-amber-400 text-black px-2 py-1 rounded-full text-xs font-bold uppercase tracking-wide">EVENTO</span>
+        <span class="bg-amber-400 text-black px-2 py-1 rounded-full text-xs font-bold uppercase tracking-wide ">EVENTO</span>
       </div>
       <small class="text-gray-500 dark:text-gray-400 block mb-3">{{ date }}</small>
       <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-3 line-clamp-2">{{ title }}</h4>

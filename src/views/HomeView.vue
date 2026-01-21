@@ -3,11 +3,15 @@ import HeroVideo from '../components/common/HeroVideo.vue';
 import HomeCard from '../components/common/HomeCard.vue';
 import { Map, Lightbulb, Backpack, Users } from 'lucide-vue-next';
 
+// 1. Obtenemos la base URL (será "/" en local y "/OnubHiking_Vue/" en GitHub)
+const baseUrl = import.meta.env.BASE_URL;
+
 const menuCards = [
     {
         title: 'Rutas Cercanas',
         description: 'Descubre los tesoros ocultos de la Sierra de Aracena y las marismas del Odiel.',
-        image: '/images/paisaje1.jpg',
+        // 2. Concatenamos la base antes de la ruta (asumiendo que están en public/images/)
+        image: `${baseUrl}images/paisaje1.jpg`,
         link: '/rutas',
         icon: Map,
         buttonText: 'Ver rutas'
@@ -15,7 +19,7 @@ const menuCards = [
     {
         title: 'Guía de Consejos',
         description: 'Todo lo que necesitas saber sobre seguridad, señalización y respeto al medio ambiente.',
-        image: '/images/senial.jpg',
+        image: `${baseUrl}images/senial.jpg`,
         link: '/',
         icon: Lightbulb,
         buttonText: 'Aprender más'
@@ -23,7 +27,7 @@ const menuCards = [
     {
         title: 'Equipo Técnico',
         description: '¿Qué llevar en la mochila? Analizamos el material esencial para cada estación.',
-        image: '/images/equipo1.webp',
+        image: `${baseUrl}images/equipo1.webp`,
         link: '/equipo',
         icon: Backpack,
         buttonText: 'Ver equipo'
@@ -31,7 +35,7 @@ const menuCards = [
     {
         title: 'Comunidad Onubense',
         description: 'Únete a nuestras próximas salidas grupales y comparte tu pasión con otros.',
-        image: '/images/grupo.jpg',
+        image: `${baseUrl}images/grupo.jpg`,
         link: '/comunidad',
         icon: Users,
         buttonText: 'Unirme'
@@ -43,7 +47,7 @@ const menuCards = [
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 mt-6 grow min-h-screen">
         
         <HeroVideo 
-            videoSrc="/videos/intro_Ed.mp4"
+            :videoSrc="`${baseUrl}videos/intro_Ed.mp4`"
             title="Tu aventura comienza aquí"
             subtitle="Explora Huelva de una forma diferente a través del senderismo"
         />

@@ -11,8 +11,9 @@ const routes = [
   { path: '/comunidad', name: 'comunidad', component: ComunidadView },
 ];
 
+// index.js
 const router = createRouter({
-  history: createWebHashHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(), 
   routes,
   scrollBehavior(to, from, savedPosition) {
     return savedPosition || { top: 0 }

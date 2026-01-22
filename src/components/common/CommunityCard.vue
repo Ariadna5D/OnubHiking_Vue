@@ -36,7 +36,7 @@ defineProps({
       <img
         :src="image"
         :alt="title"
-        class="w-full h-80 lg:h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+        class="w-full h-80 lg:h-full object-cover transform  transition-transform duration-700"
       />
       <div class="absolute top-6 left-6 bg-white/90 backdrop-blur-md px-4 py-2 rounded-full flex items-center gap-2 shadow-lg">
         <MapPin class="text-emerald-600" :size="18" />
@@ -60,7 +60,7 @@ defineProps({
       <div class="flex justify-center lg:justify-start">
         <a
           href=""
-          class="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-xl text-lg font-black bg-emerald-600 text-white hover:bg-emerald-500 shadow-lg shadow-emerald-200 hover:shadow-emerald-300 hover:-translate-y-1 active:scale-95 transition-all duration-300"
+          class="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-xl text-lg font-bold bg-emerald-600 text-white hover:bg-emerald-500 shadow-lg shadow-emerald-200 hover:shadow-emerald-300 hover:-translate-y-1 active:scale-95 transition-all duration-300"
         >
           {{ linkText }}
           <div class="w-5 h-5 shrink-0">

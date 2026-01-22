@@ -28,7 +28,7 @@ defineProps({
       <img
         :src="image"
         :alt="title"
-        class="w-full h-64 md:h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+        class="w-full h-64 md:h-full object-cover transform  transition-transform duration-700"
       />
       <div class="absolute inset-0 bg-linear-to-t from-black/20 to-transparent md:hidden"></div>
     </div>

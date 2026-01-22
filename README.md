@@ -1,5 +1,25 @@
-# Vue 3 + Vite
+# OnubHiking Vue
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+OnubHiking Vue es una **SPA** sencilla desarrollada para aprender Vue, centrada en la visualización de rutas de senderismo en la provincia de Huelva.
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+---
+
+## ✨ Características
+
+- Listado de rutas de senderismo con datos básicos (nombre, localización, distancia).
+- Vistas separadas para listado y detalle de ruta.
+- Diseño responsive orientado a uso en móvil y escritorio.
+- Código organizado en componentes Vue para facilitar la reutilización.
+
+---
+
+## 🛠️ Tecnologías
+
+- Vue 3.
+- Vue Router para la navegación.
+- Tailwind css.
+- Vite.
+- HTML5, CSS3 y JavaScript.
+
+---
+

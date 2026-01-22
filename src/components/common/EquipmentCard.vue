@@ -17,7 +17,7 @@ defineProps({
       <img 
         :src="image" 
         :alt="title" 
-        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+        class="w-full h-full object-cover transition-transform duration-700 " 
       />
       <div class="absolute top-4 left-4 bg-emerald-600/90 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-[0.2em] px-3 py-1 rounded-full shadow-lg">
         {{ category }}

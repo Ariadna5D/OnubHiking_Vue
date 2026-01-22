@@ -21,7 +21,7 @@ OnubHiking Vue es una **SPA** sencilla desarrollada para aprender Vue, centrada 
 
 Este proyecto ha sido desarrollado con fines estrictamente educativos y de aprendizaje.
 
-* **No soy el autor ni poseo los derechos de copyright de las imágenes de animales mostradas.** Estas pertenecen a sus respectivos dueños y son servidas por las APIs mencionadas únicamente para demostración técnica.
+* **No soy el autor ni poseo los derechos de copyright de las imágenes de paisajes mostradas.** Estas pertenecen a sus respectivos dueños y son servidas por las APIs mencionadas únicamente para demostración técnica.
 
 ---
 Desarrollado por Ariadna Delgado Santana

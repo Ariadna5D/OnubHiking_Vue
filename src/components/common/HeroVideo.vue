@@ -34,10 +34,10 @@ defineProps({
         
         <div class="absolute inset-0 bg-black/40 flex items-center justify-center text-center text-white px-4">
             <div class="max-w-4xl">
-                <h1 v-if="title" class="text-3xl md:text-5xl font-bold mb-2 drop-shadow-md">
+                <h1 v-if="title" class="text-7xl md:text-5xl font-bold mb-3 drop-shadow-md">
                     {{ title }}
                 </h1>
-                <p v-if="subtitle" class="text-lg md:text-xl opacity-90 drop-shadow-sm">
+                <p v-if="subtitle" class="text-xl md:text-xl opacity-90 drop-shadow-sm">
                     {{ subtitle }}
                 </p>
                 <slot></slot>

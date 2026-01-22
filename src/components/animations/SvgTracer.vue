@@ -12,7 +12,6 @@
 
 <style scoped>
 .path-animation {
-  /* El valor depende de la longitud del path */
   stroke-dasharray: 1000; 
   stroke-dashoffset: 1000;
   animation: draw 3s forwards ease-in-out;

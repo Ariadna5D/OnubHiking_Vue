@@ -1,5 +1,6 @@
 <script setup>
 import { Map, Zap, Users, ArrowRight } from 'lucide-vue-next';
+import ArrowAnimation from '../animations/ArrowAnimation.vue';
 
 defineProps({
   title: String,
@@ -69,12 +70,14 @@ defineProps({
 
       <a
         :href="link"
-        class="mt-auto inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-black uppercase tracking-widest
+        class="mt-auto inline-flex items-center justify-center gap-3 px-6 py-3 rounded-xl text-sm font-black uppercase tracking-widest
                bg-emerald-600 text-white hover:bg-emerald-500 shadow-lg shadow-emerald-100 
-               hover:shadow-emerald-200 hover:translate-x-1 active:scale-95 transition-all duration-300"
+               hover:shadow-emerald-200 transition-all duration-300 group/btn"
       >
         {{ linkText }}
-        <ArrowRight :size="18" />
+        <div class="w-5 h-5 shrink-0">
+          <ArrowAnimation />
+        </div>
       </a>
     </div>
   </div>

@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from "vue"; // No hace falta importar Transition explícitamente en el script
 import { Menu, X } from 'lucide-vue-next'; // He añadido 'X' para que cambie el icono al abrir
+import SvgTracer from "../animations/SvgTracer.vue";
 
 const menuItems = ref([
   { label: "Inicio", path: "/" },
@@ -24,7 +25,7 @@ const isMobileMenuOpen = ref(false);
             OnubHiking
           </h2>
         </router-link>
-
+        
         <ul class="hidden lg:flex xl:w-1/3 place-content-around gap-2 xl:gap-8 list-none m-0 p-0 items-center">
           <li v-for="item in menuItems" :key="item.path">
             <router-link

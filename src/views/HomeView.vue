@@ -4,6 +4,7 @@ import WindCanvas from '../components/animations/WindCanvas.vue';
 import HeroVideo from '../components/common/HeroVideo.vue';
 import HomeCard from '../components/common/HomeCard.vue';
 import { Map, Lightbulb, Backpack, Users } from 'lucide-vue-next';
+import VideoPlayer from '../components/common/VideoPlayer.vue';
 
 // 1. Obtenemos la base URL (será "/" en local y "/OnubHiking_Vue/" en GitHub)
 const baseUrl = import.meta.env.BASE_URL;
@@ -50,16 +51,27 @@ const menuCards = [
 
         <HeroVideo :videoSrc="`${baseUrl}videos/intro_Ed.mp4`" title="Tu aventura comienza aquí"
             subtitle="Explora Huelva de una forma diferente a través del senderismo" />
-        <section class="max-w-6xl mx-auto mt-8 mb-24">
+        <section class="max-w-6xl mx-auto mt-8 mb-10">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-7">
-            <ScrollReveal 
-            v-for="(card, index) in menuCards" 
-            :key="card.id || index"
-            :delay="index * 150"
-            >
-            <HomeCard v-bind="card" />
-            </ScrollReveal>
+                <ScrollReveal v-for="(card, index) in menuCards" :key="card.id || index" :delay="index * 150">
+                    <HomeCard v-bind="card" />
+                </ScrollReveal>
             </div>
+        </section>
+
+        <section class="max-w-6xl mx-auto mb-24 px-0"> 
+            <div class="max-w-4xl mx-auto text-center mb-10">
+                <h2 class="text-5xl font-bold text-emerald-900 mb-4">Descubre Huelva</h2>
+                <p class="text-gray-600 text-2xl">De una manera que nunca la has visto.</p>
+            </div>
+
+            <ScrollReveal class="w-full">
+                <VideoPlayer 
+                    :src="`${baseUrl}videos/video_senderos_Huelva.mp4`"
+                    :poster="`${baseUrl}images/miniatura.webp`" 
+                    title="Senderos de Huelva" 
+                />
+            </ScrollReveal>
         </section>
     </div>
 </template>

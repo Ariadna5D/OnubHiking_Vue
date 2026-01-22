@@ -1,5 +1,6 @@
 <script setup>
 import { MoveRight, MapPin } from 'lucide-vue-next';
+import ArrowAnimation from '../animations/ArrowAnimation.vue';
 
 defineProps({
   image: {
@@ -62,7 +63,9 @@ defineProps({
           class="inline-flex items-center justify-center gap-3 px-10 py-4 rounded-xl text-lg font-black bg-emerald-600 text-white hover:bg-emerald-500 shadow-lg shadow-emerald-200 hover:shadow-emerald-300 hover:-translate-y-1 active:scale-95 transition-all duration-300"
         >
           {{ linkText }}
-          <MoveRight :size="20" />
+          <div class="w-5 h-5 shrink-0">
+          <ArrowAnimation />
+        </div>
         </a>
       </div>
     </div>

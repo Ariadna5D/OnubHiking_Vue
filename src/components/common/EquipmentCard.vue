@@ -37,7 +37,7 @@ defineProps({
     </div>
 
     <div class="px-8 pb-6">
-      <div class="h-1 w-12 bg-emerald-100 rounded-full group-hover:w-full transition-all duration-500"></div>
+      <div class="h-1 w-12 bg-emerald-300 rounded-full group-hover:w-full transition-all duration-500"></div>
     </div>
   </div>
 </template>

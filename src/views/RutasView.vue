@@ -135,7 +135,7 @@ const topRutas = [
     <HeroVideo :videoSrc="`${baseUrl}videos/consejos_Ed.mp4`" title="Rutas"
       subtitle="Los senderos más conocidos de Huelva" />
 
-    <section class="mt-8 px-15">
+    <section class="mt-8">
       <ScrollReveal>
         <SearchBar />
       </ScrollReveal>
@@ -147,13 +147,13 @@ const topRutas = [
       </div>
     </section>
 
-    <section class="mb-12 px-15">
+    <section class="mb-12">
       <h2 class="text-2xl font-bold text-emerald-950 mb-4">
         Top rutas más visitadas
       </h2>
       <div class="overflow-x-auto bg-white rounded-xl shadow-md border border-gray-100">
         <table class="min-w-full text-sm">
-          <thead class="bg-teal-200">
+          <thead class="bg-teal-300">
             <tr>
               <th class="text-left px-4 py-3 font-semibold text-gray-700">#</th>
               <th class="text-left px-4 py-3 font-semibold text-gray-700">Ruta</th>
@@ -163,7 +163,7 @@ const topRutas = [
             </tr>
           </thead>
           <tbody>
-            <tr v-for="ruta in topRutas" :key="ruta.rank" class="border-t hover:bg-teal-50 border-gray-100">
+            <tr v-for="ruta in topRutas" :key="ruta.rank" class="border-t hover:bg-teal-100 border-gray-100">
               <td class="px-4 py-3 text-gray-700">{{ ruta.rank }}</td>
               <td class="px-4 py-3 text-gray-900 font-medium">{{ ruta.name }}</td>
               <td class="px-4 py-3 text-gray-700">{{ ruta.km }}</td>

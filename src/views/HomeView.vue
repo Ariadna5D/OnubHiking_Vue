@@ -1,4 +1,6 @@
 <script setup>
+import { computed } from 'vue';
+import { useI18n } from 'vue-i18n';
 import ScrollReveal from '../components/animations/ScrollReveal.vue';
 import WindCanvas from '../components/animations/WindCanvas.vue';
 import HeroVideo from '../components/common/HeroVideo.vue';
@@ -6,51 +8,51 @@ import HomeCard from '../components/common/HomeCard.vue';
 import { Map, Lightbulb, Backpack, Users } from 'lucide-vue-next';
 import VideoPlayer from '../components/common/VideoPlayer.vue';
 
-// 1. Obtenemos la base URL (será "/" en local y "/OnubHiking_Vue/" en GitHub)
+const { t } = useI18n();
 const baseUrl = import.meta.env.BASE_URL;
 
-const menuCards = [
+const menuCards = computed(() => [
     {
-        title: 'Rutas Cercanas',
-        description: 'Descubre los tesoros ocultos de la Sierra de Aracena y las marismas del Odiel.',
-        // 2. Concatenamos la base antes de la ruta (asumiendo que están en public/images/)
+        title: t('home.menu_cards.rutas.title'),
+        description: t('home.menu_cards.rutas.description'),
         image: `${baseUrl}images/paisaje1.jpg`,
         link: '/rutas',
         icon: Map,
-        buttonText: 'Ver rutas'
+        buttonText: t('home.menu_cards.rutas.button')
     },
     {
-        title: 'Guía de Consejos',
-        description: 'Todo lo que necesitas saber sobre seguridad, señalización y respeto al medio ambiente.',
+        title: t('home.menu_cards.guia.title'),
+        description: t('home.menu_cards.guia.description'),
         image: `${baseUrl}images/senial.jpg`,
         link: '/',
         icon: Lightbulb,
-        buttonText: 'Aprender más'
+        buttonText: t('home.menu_cards.guia.button')
     },
     {
-        title: 'Equipo Técnico',
-        description: '¿Qué llevar en la mochila? Analizamos el material esencial para cada estación.',
+        title: t('home.menu_cards.equipo.title'),
+        description: t('home.menu_cards.equipo.description'),
         image: `${baseUrl}images/equipo1.webp`,
         link: '/equipo',
         icon: Backpack,
-        buttonText: 'Ver equipo'
+        buttonText: t('home.menu_cards.equipo.button')
     },
     {
-        title: 'Comunidad Onubense',
-        description: 'Únete a nuestras próximas salidas grupales y comparte tu pasión con otros.',
+        title: t('home.menu_cards.comunidad.title'),
+        description: t('home.menu_cards.comunidad.description'),
         image: `${baseUrl}images/grupo.jpg`,
         link: '/comunidad',
         icon: Users,
-        buttonText: 'Unirme'
+        buttonText: t('home.menu_cards.comunidad.button')
     }
-];
+]);
 </script>
 
 <template>
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 mt-6 grow min-h-screen">
 
-        <HeroVideo :videoSrc="`${baseUrl}videos/intro_Ed.mp4`" title="Tu aventura comienza aquí"
-            subtitle="Explora Huelva de una forma diferente a través del senderismo" />
+        <HeroVideo :videoSrc="`${baseUrl}videos/intro_Ed.mp4`" :title="$t('home.hero.title')"
+            :subtitle="$t('home.hero.subtitle')" />
+
         <section class="max-w-6xl mx-auto mt-8 mb-10">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-7">
                 <ScrollReveal v-for="(card, index) in menuCards" :key="card.id || index" :delay="index * 150">
@@ -59,19 +61,20 @@ const menuCards = [
             </div>
         </section>
 
-        <section class="max-w-6xl mx-auto mb-24 px-0"> 
+        <section class="max-w-6xl mx-auto mb-24 px-0">
             <div class="max-w-4xl mx-auto text-center mb-10">
-                <h2 class="text-5xl font-bold text-emerald-900 mb-4">Descubre Huelva</h2>
-                <p class="text-gray-600 text-2xl">De una manera que nunca la has visto.</p>
+                <h2 class="text-5xl font-bold text-emerald-900 mb-4">{{ $t('home.discover.title') }}</h2>
+                <p class="text-gray-600 text-2xl">{{ $t('home.discover.subtitle') }}</p>
             </div>
 
-            <ScrollReveal class="w-full">
-                <VideoPlayer 
-                    :src="`${baseUrl}videos/video_senderos_Huelva.mp4`"
-                    :poster="`${baseUrl}images/miniatura.webp`" 
-                    title="Senderos de Huelva" 
-                />
-            </ScrollReveal>
+            <div
+                class="grid grid-cols-1 md:grid-cols-1 gap-8 items-center bg-white rounded-3xl overflow-hidden shadow-2xl border border-emerald-100">
+                <div class="p-8 md:p-12">
+                    <VideoPlayer :src="`${baseUrl}videos/video_senderos_Huelva.mp4`"
+                        :poster="`${baseUrl}images/miniatura.webp`" />
+                </div>
+            </div>
         </section>
+
     </div>
 </template>

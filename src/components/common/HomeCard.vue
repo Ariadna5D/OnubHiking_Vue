@@ -37,7 +37,6 @@ defineProps({
         <div class="flex items-center justify-between mt-auto">
           <span class="text-emerald-600 font-black text-sm uppercase tracking-widest group-hover:translate-x-2 transition-transform duration-300 flex items-center gap-2">
             {{ buttonText }}
-            <ArrowUpRight :size="18" />
           </span>
           
           <div class="w-10 h-10 rounded-full bg-emerald-50 flex items-center justify-center text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-300">

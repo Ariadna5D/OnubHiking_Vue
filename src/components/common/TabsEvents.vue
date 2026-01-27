@@ -1,5 +1,6 @@
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, computed } from "vue";
+import { useI18n } from 'vue-i18n';
 import EventCard from "./EventCard.vue";
 import { Flame, Hammer, Clock } from "lucide-vue-next";
 
@@ -10,33 +11,31 @@ import Tab from "primevue/tab";
 import TabPanels from "primevue/tabpanels";
 import TabPanel from "primevue/tabpanel";
 
+const { t, tm, rt } = useI18n();
 const isLoading = ref(true);
 
-const activeEvents = ref([
-  {
-    date: "13 Enero 2026",
-    title: "Salida a Río Tinto",
-    description:
-      "Haremos una ruta circular de 5km, apto para todas las edades...",
-    participants: "18 personas confirmadas",
-  },
-  {
-    date: "20 Diciembre 2025",
-    title: "Ruta de Hornos de Cal",
-    description: "Nos veremos pronto para desayunar juntos...",
-    participants: "50 personas confirmadas",
-  },
-]);
+// Convertimos activeEvents en computed para que reaccione al cambio de idioma
+const activeEvents = computed(() => {
+  const lista = tm('comunidad_view.events.list');
+  if (!Array.isArray(lista)) return [];
+  return lista.map(event => ({
+    date: rt(event.date),
+    title: rt(event.title),
+    description: rt(event.description),
+    participants: rt(event.participants)
+  }));
+});
 
-const tabs = ref([
-  { id: "activos", label: "Eventos Activos", icon: Flame, disabled: false },
+// Convertimos tabs en computed para traducir las etiquetas
+const tabs = computed(() => [
+  { id: "activos", label: t('tabs_events.tab_active'), icon: Flame, disabled: false },
   {
     id: "anteriores",
-    label: "Eventos Anteriores",
+    label: t('tabs_events.tab_past'),
     icon: Hammer,
     disabled: true,
   },
-  { id: "futuros", label: "Eventos Futuros", icon: Clock, disabled: true },
+  { id: "futuros", label: t('tabs_events.tab_future'), icon: Clock, disabled: true },
 ]);
 
 onMounted(() => {
@@ -93,7 +92,7 @@ onMounted(() => {
 
         <TabPanel value="anteriores">
           <div class="text-center py-16 text-gray-400 font-medium">
-            No hay eventos para mostrar.
+            {{ $t('tabs_events.no_events') }}
           </div>
         </TabPanel>
       </TabPanels>

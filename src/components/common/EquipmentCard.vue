@@ -5,7 +5,8 @@ defineProps({
   image: String,
   category: {
     type: String,
-    default: 'Esencial'
+    // Usamos la clave de traducción para el valor por defecto
+    default: '' 
   }
 });
 </script>
@@ -17,13 +18,11 @@ defineProps({
       <img 
         :src="image" 
         :alt="title" 
-        class="w-full h-full object-cover transition-transform duration-700 " 
+        class="w-full h-full object-cover transition-transform duration-700" 
       />
       <div class="absolute top-4 left-4 bg-emerald-600/90 backdrop-blur-md text-white text-[10px] font-black uppercase tracking-[0.2em] px-3 py-1 rounded-full shadow-lg">
-        {{ category }}
+        {{ category || $t('equipment_card.default_category') }}
       </div>
-      
-
     </div>
 
     <div class="p-8 pt-10 grow">

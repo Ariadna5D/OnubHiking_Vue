@@ -1,0 +1,81 @@
+{
+  "header": { "menu": { "home": "Home", "equipment": "Equipment", "routes": "Routes", "community": "Community" } },
+  "footer": {
+    "description": "OnubHiking guides you through the best hiking trails in Huelva and Andalusia. Discover paths, GPS tracks, and passionate hiker communities.",
+    "explore": "Explore",
+    "popular_routes": "Popular Routes",
+    "community": "Community",
+    "upload_route": "Upload Route",
+    "my_profile": "My Profile",
+    "my_routes": "My Routes",
+    "events": "Events",
+    "legal": "Legal",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "legal_notice": "Legal Notice",
+    "cookies": "Cookies",
+    "made_with": "Made with Vue 3, Tailwind CSS v4 and PrimeVue.",
+    "location": "Huelva, Spain"
+  },
+  "home": {
+    "hero": { "title": "Your adventure starts here", "subtitle": "Explore Huelva in a different way through hiking" },
+    "menu_cards": {
+      "rutas": { "title": "Nearby Routes", "description": "Discover the hidden treasures of the Sierra de Aracena and the Odiel marshes.", "button": "View routes" },
+      "guia": { "title": "Advice Guide", "description": "Everything you need to know about safety, signaling, and respect for the environment.", "button": "Learn more" },
+      "equipo": { "title": "Technical Gear", "description": "What to carry in your backpack? We help you choose the best material for each route.", "button": "View gear" },
+      "comunidad": { "title": "Community", "description": "Join our hiking group and share your passion with others.", "button": "Join" }
+    },
+    "discover": { "title": "Discover Huelva", "subtitle": "In a way you have never seen before." }
+  },
+  "rutas_view": {
+    "hero": { "title": "Routes", "subtitle": "Most famous trails in Huelva" },
+    "button_text": "View route details",
+    "top_section": { "title": "Top most visited routes", "table": { "rank": "#", "route": "Route", "km": "Kilometers", "difficulty": "Difficulty", "score": "Score" } },
+    "lista": [
+      { "title": "Piedras River Marshes Natural Area", "distance": "12 km", "difficulty": "Moderate difficulty", "audience": "Ideal for bird watching in a unique marsh landscape. Recommended for families with older children and leashed pets.", "description": "Circular route with marsh landscapes and bird watching throughout the journey.", "image": "ruta1.webp" },
+      { "title": "Doñana National Park", "distance": "8 km", "difficulty": "Easy difficulty", "audience": "Perfect for all levels, including children and seniors. Pets allowed.", "description": "Accessible trail between dunes and marshes with great wealth of fauna and flora.", "image": "ruta2.webp" },
+      { "title": "Lime Kilns (Hornos de Cal)", "distance": "10 km", "difficulty": "Moderate difficulty", "audience": "Suitable for active families with children accustomed to walking. Pets welcome.", "description": "A tour that combines natural history with industrial heritage in a mountain environment.", "image": "ruta3.webp" },
+      { "title": "Mining Train Way and Riotinto Mines", "distance": "14 km", "difficulty": "Moderate-high difficulty", "audience": "Recommended for adults and teenagers; not suitable for small children or pets.", "description": "Itinerary through the 'Martian' landscape of the Riotinto mines and the old railway track.", "image": "ruta4.webp" },
+      { "title": "Castaño del Robledo and Picos de Aroche", "distance": "18 km", "difficulty": "High difficulty", "audience": "Only for experienced hikers with good physical condition.", "description": "Demanding route with steep slopes and spectacular mountain views.", "image": "ruta5.webp" },
+      { "title": "Jabugo Riverside", "distance": "6 km", "difficulty": "Easy difficulty", "audience": "Ideal for families with children of all ages. Flat and shaded terrain.", "description": "Walk along the Múrtiga River, one of the freshest and most accessible routes in the area.", "image": "ruta6.webp" },
+      { "title": "Charco Malo Trail", "distance": "5 km", "difficulty": "Moderate difficulty", "audience": "Suitable for families with children accustomed to walking. Leashed pets.", "description": "Route towards spectacular waterfalls in a very photogenic setting.", "image": "ruta7.webp" },
+      { "title": "Alájar Trail", "distance": "1.7 km", "difficulty": "Easy difficulty", "audience": "Perfect for starting in hiking. Ideal for children, seniors, and pets.", "description": "Short and accessible path around Alájar, ideal as a first experience.", "image": "ruta8.webp" },
+      { "title": "Enchanted Forest Route", "distance": "8 km", "difficulty": "Moderate difficulty", "audience": "Suitable for families with children over 8 years old and pets with hiking experience.", "description": "Journey through cork oaks, holm oaks, and ancient chestnut trees in a very shady environment.", "image": "ruta9.webp" },
+      { "title": "El Talenque-Valdelarco Trail", "distance": "3 km", "difficulty": "Easy difficulty", "audience": "Perfect for the whole family, including small children and pets.", "description": "Well-marked historical trail with accessible terrain and mountain views.", "image": "ruta10.webp" }
+    ],
+    "top_data": [
+      { "rank": 1, "name": "Jabugo Riverside", "km": "4.8 km", "difficulty": "Medium", "score": "9.8 ★" },
+      { "rank": 2, "name": "Charco Malo Trail", "km": "1.7 km", "difficulty": "Medium", "score": "9.0 ★" },
+      { "rank": 3, "name": "Alájar - Los Madroñeros Trail", "km": "1.7 km", "difficulty": "Low", "score": "8.7 ★" },
+      { "rank": 4, "name": "El Talenque", "km": "3.0 km", "difficulty": "Medium", "score": "8.5 ★" },
+      { "rank": 5, "name": "Arias Montano Rock Trail", "km": "2.5 km", "difficulty": "High", "score": "8.3 ★" }
+    ]
+  },
+  "equipo_view": {
+    "hero": { "title": "Recommended Gear", "subtitle": "Equip yourself like a pro to enjoy Huelva" },
+    "items": [
+      { "title": "Footwear", "category": "Fundamental", "description": "Hiking boots with good grip and waterproofing.", "image": "equipo1.webp" },
+      { "title": "Canteen", "category": "Vital", "description": "At least 1.5 liters. Staying hydrated is key.", "image": "equipo2.webp" },
+      { "title": "First Aid Kit", "category": "Safety", "description": "Basic kit with disinfectant, bandages, and plasters.", "image": "equipo3.webp" },
+      { "title": "Sun Protection", "category": "Protection", "description": "Cap and glasses. UV radiation is intense in the mountains.", "image": "equipo4.webp" },
+      { "title": "Backpack", "category": "Essential", "description": "20-30L capacity with chest adjustment.", "image": "equipo5.webp" },
+      { "title": "Technical Clothing", "category": "Comfort", "description": "Breathable layer system. Avoid cotton.", "image": "equipo6.webp" }
+    ]
+  },
+  "comunidad_view": {
+    "hero": { "title": "Discover our great community", "subtitle": "Explore Huelva with the best company and for all ages" },
+    "community_card": { "title": "Join our group trails!", "description": "We meet often and there is always a great atmosphere; we will discover new places, experiences, and friends! This is suitable for all ages!" },
+    "news_section": { "title": "Community News", "video_title": "Rio Tinto with the community" },
+    "events": {
+      "list": [
+        { "date": "January 13, 2026", "title": "Rio Tinto Outing", "description": "We will do a 5km circular route, suitable for all ages...", "participants": "18 people confirmed" },
+        { "date": "December 20, 2025", "title": "Lime Kilns Route", "description": "We will meet soon to have breakfast together...", "participants": "50 people confirmed" }
+      ]
+    }
+  },
+  "community_card": { "location": "Huelva, Spain", "badge": "Our Community", "default_link_text": "Explore available routes" },
+  "equipment_card": { "default_category": "Essential" },
+  "event_card": { "badge_new": "New", "badge_upcoming": "Upcoming", "button_join": "Join" },
+  "search_bar": { "placeholder": "Search routes by name, location or difficulty...", "button": "Search" },
+  "tabs_events": { "tab_active": "Active Events", "tab_past": "Past Events", "tab_future": "Future Events", "no_events": "No events to show." }
+}

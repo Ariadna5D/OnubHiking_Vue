@@ -1,25 +1,28 @@
 <script setup>
+import { computed } from 'vue'; // Añadido computed
+import { useI18n } from 'vue-i18n'; // Añadido i18n
 import HeroVideo from '../components/common/HeroVideo.vue';
 import CommunityCard from '../components/common/CommunityCard.vue';
 import TabsEvents from '../components/common/TabsEvents.vue';
 import ScrollReveal from '../components/animations/ScrollReveal.vue';
 import VideoPlayer from '../components/common/VideoPlayer.vue';
 
+const { t } = useI18n();
 const baseUrl = import.meta.env.BASE_URL;
 
-const communityData = {
+const communityData = computed(() => ({
   image: `${baseUrl}images/paisaje1.jpg`,
-  title: '¡Únete a nuestras rutas en grupo!',
-  description: 'Quedamos a menudo y siempre hay muy buen ambiente, descubriremos lugares, experiencias y amigos nuevos! Esto es apto para todas las edades!'
-};
+  title: t('comunidad_view.community_card.title'),
+  description: t('comunidad_view.community_card.description')
+}));
 </script>
 
 <template>
   <div class="container mx-auto px-4 mt-6 grow">
     <HeroVideo
       :videoSrc="`${baseUrl}videos/cascada.mp4`"
-      title="Descubre nuestra gran comunidad"
-      subtitle="Explora Huelva con la mejor compañía y para todas las edades"
+      :title="$t('comunidad_view.hero.title')"
+      :subtitle="$t('comunidad_view.hero.subtitle')"
     />
 
     <section class="mb-12 ">
@@ -30,13 +33,12 @@ const communityData = {
 
     <section class="mb-12 ">
       <h2 class="text-2xl font-bold text-emerald-900 mb-6 text-center">
-        Noticias de la Comunidad
+        {{ $t('comunidad_view.news_section.title') }}
       </h2>
       <ScrollReveal>
         <TabsEvents />
       </ScrollReveal>
     </section>
-
 
   </div>
 </template>

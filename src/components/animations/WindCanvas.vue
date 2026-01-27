@@ -43,7 +43,7 @@ class Particle {
 
   draw(ctx) {
     ctx.strokeStyle = 'rgba(0, 70, 40, 0.15)'; 
-    ctx.lineWidth = 1.2;
+    ctx.lineWidth = 2;
     ctx.beginPath();
     
     ctx.moveTo(this.x, this.y);

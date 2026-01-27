@@ -2,6 +2,7 @@
 import Header from './components/layout/Header.vue';
 import Footer from './components/layout/Footer.vue';
 import WindCanvas from './components/animations/WindCanvas.vue';
+import ScrollToTop from './components/common/ScrollToTop.vue';
 </script>
 
 <template>
@@ -13,7 +14,7 @@ import WindCanvas from './components/animations/WindCanvas.vue';
 
             <router-view class="relative z-10"></router-view> 
         </main>
-
+        <ScrollToTop></ScrollToTop>
         <Footer />
     </div>
 </template>

@@ -14,7 +14,7 @@ defineProps({
     },
     height: {
         type: String,
-        default: 'h-[60vh]' // Altura por defecto
+        default: 'h-[50vh] md:h-[60vh] lg:h-[70vh]' 
     }
 });
 </script>
@@ -32,16 +32,32 @@ defineProps({
             Tu navegador no soporta videos.
         </video>
         
-        <div class="absolute inset-0 bg-black/40 flex items-center justify-center text-center text-white px-4">
-            <div class="max-w-4xl">
-                <h1 v-if="title" class="text-7xl md:text-5xl font-bold mb-3 drop-shadow-md">
+        <div class="absolute inset-0 bg-black/40 flex items-center justify-center text-center text-white px-6 py-10">
+            <div class="max-w-5xl mx-auto">
+                <h1 
+                    v-if="title" 
+                    class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 balance drop-shadow-lg leading-tight"
+                >
                     {{ title }}
                 </h1>
-                <p v-if="subtitle" class="text-xl md:text-xl opacity-90 drop-shadow-sm">
+                
+                <p 
+                    v-if="subtitle" 
+                    class="text-lg sm:text-xl md:text-2xl opacity-90 drop-shadow-md max-w-2xl mx-auto"
+                >
                     {{ subtitle }}
                 </p>
-                <slot></slot>
+
+                <div class="mt-8">
+                    <slot></slot>
+                </div>
             </div>
         </div>
     </section>
 </template>
+
+<style scoped>
+.balance {
+    text-wrap: balance;
+}
+</style>

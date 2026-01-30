@@ -16,7 +16,6 @@ import ScrollReveal from '../components/animations/ScrollReveal.vue';
 const { t } = useI18n();
 const baseUrl = import.meta.env.BASE_URL;
 
-// Usamos computed para que los textos cambien dinámicamente
 const equipoItems = computed(() => [
   {
     title: t('equipo_view.items.0.title'),

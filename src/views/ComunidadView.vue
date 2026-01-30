@@ -1,6 +1,6 @@
 <script setup>
-import { computed } from 'vue'; // Añadido computed
-import { useI18n } from 'vue-i18n'; // Añadido i18n
+import { computed } from 'vue'; 
+import { useI18n } from 'vue-i18n'; 
 import HeroVideo from '../components/common/HeroVideo.vue';
 import CommunityCard from '../components/common/CommunityCard.vue';
 import TabsEvents from '../components/common/TabsEvents.vue';

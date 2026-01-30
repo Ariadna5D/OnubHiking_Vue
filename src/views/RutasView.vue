@@ -20,7 +20,6 @@ const rutas = computed(() => {
     audience: rt(item.audience),
     description: rt(item.description),
     image: `${baseUrl}images/${rt(item.image)}`,
-    // ESTE ES EL CAMPO QUE FALTABA PARA EL BOTÓN
     buttonText: t('rutas_view.button_text'), 
     link: "#",
   }));

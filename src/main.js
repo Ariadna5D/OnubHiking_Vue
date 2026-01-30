@@ -1,7 +1,7 @@
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
-import i18n from './i18n' // <--- 1. Importa tu archivo de configuración
+import i18n from './i18n' 
 import PrimeVue from 'primevue/config'
 import './style.css'  
 import Tabs from 'primevue/tabs';
@@ -18,7 +18,7 @@ app.component('Tab', Tab);
 app.component('TabPanels', TabPanels);
 app.component('TabPanel', TabPanel);
 
-app.use(i18n) // <--- 2. Registra el plugin de i18n
+app.use(i18n) 
 app.use(router)
 app.use(PrimeVue, { unstyled: true }) 
 
